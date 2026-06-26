@@ -1,0 +1,349 @@
+/* ============================================
+   LOGIN PAGE STYLES
+   ============================================ */
+
+/* ===== SPLASH SCREEN ===== */
+.splashScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+  transition: opacity 0.5s;
+}
+
+.splashLogo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  animation: splashBounce 0.6s ease;
+}
+
+@keyframes splashBounce {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.splashTitle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.splashSubtitle {
+  color: #cbd5e1;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.splashProgressBar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.splashProgressFill {
+  width: 0%;
+  height: 100%;
+  background: white;
+  animation: splashProgress 1.5s ease forwards;
+}
+
+@keyframes splashProgress {
+  to { width: 100%; }
+}
+
+.splashLoading {
+  color: #94a3b8;
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
+
+/* ===== LOGIN PAGE ===== */
+.loginPage {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+}
+
+.bgDecoration1 {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 20rem;
+  height: 20rem;
+  background: #4f46e6;
+  border-radius: 9999px;
+  filter: blur(128px);
+  opacity: 0.4;
+  animation: glowPulse 3s infinite;
+}
+
+.bgDecoration2 {
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 20rem;
+  height: 20rem;
+  background: #9333ea;
+  border-radius: 9999px;
+  filter: blur(128px);
+  opacity: 0.4;
+  animation: glowPulse 3s infinite reverse;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+/* ===== LOGIN CARD ===== */
+.loginCard {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 56rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .loginCard {
+    flex-direction: row;
+  }
+}
+
+/* ===== LOGIN HEADER ===== */
+.loginHeader {
+  position: relative;
+  padding: 1.5rem;
+  color: white;
+  min-height: 260px;
+  background-image: url('https://files.catbox.moe/jl72ny.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+
+.loginHeaderOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(49, 46, 129, 0.9), rgba(49, 46, 129, 0.6));
+}
+
+.loginHeaderContent {
+  position: relative;
+  z-index: 10;
+}
+
+.loginSchoolBadge {
+  width: 2rem;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.loginSchoolName {
+  font-weight: bold;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.loginTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.loginDesc {
+  color: #c7d2fe;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ===== LOGIN FORM ===== */
+.loginFormContainer {
+  background: white;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .loginFormContainer {
+    flex: 1;
+  }
+}
+
+.loginFormInner {
+  max-width: 24rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.loginWelcome {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.loginWelcome h2 {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.loginWelcome p {
+  color: #64748b;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ===== TABS ===== */
+.loginTabs {
+  display: flex;
+  background: #f9fafb;
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  gap: 4px;
+}
+
+.loginTab {
+  flex: 1;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.loginTab:hover {
+  color: #4f46e5;
+}
+
+.loginTabActive {
+  background: white;
+  color: #4f46e5;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== INPUT ===== */
+.loginInput {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+  color: #1e293b;
+}
+
+.loginInput::placeholder {
+  color: #9ca3af;
+}
+
+.loginInput:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  background: white;
+}
+
+/* ===== BUTTON ===== */
+.loginButton {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 10px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loginButton:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.loginButton:active {
+  transform: translateY(0);
+}
+
+/* ===== ERROR ===== */
+.loginError {
+  margin-top: 0.75rem;
+  padding: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+.loginError.show {
+  display: block;
+}
+
+.loginError p {
+  color: #dc2626;
+  font-size: 0.75rem;
+}
+
+/* ===== FOOTER ===== */
+.loginFooter {
+  text-align: center;
+  font-size: 0.625rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
